@@ -45,7 +45,7 @@ public class ExplorePlayerActivity extends BaseFragmentActivity {
         imgVideo = findViewById(R.id.exo_view);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("VideoView视频播放详情");
+            getSupportActionBar().setTitle("Explore视频播放详情");
         }
 //        imgVideo.setLoading(true);
         imgVideo.initPlayer();
