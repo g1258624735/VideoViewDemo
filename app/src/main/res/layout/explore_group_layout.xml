@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gxj.videoad.widget.XHGVideoPlayerView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/img_thumb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <View
+        android:id="@+id/help_video_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_start_video"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/help_icon_play_big"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/tv_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_start_video"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="重播"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+</RelativeLayout>
