@@ -6,6 +6,9 @@ import com.gxj.videoad.R;
 import com.gxj.videoad.base.BaseFragmentActivity;
 import com.gxj.videoad.ui.fragment.HomeFragment;
 
+/**
+ * @author Administrator-pc
+ */
 public class MainActivity extends BaseFragmentActivity {
 
     @Override

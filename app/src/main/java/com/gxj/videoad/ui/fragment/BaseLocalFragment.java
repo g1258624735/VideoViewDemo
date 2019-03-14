@@ -2,7 +2,6 @@ package com.gxj.videoad.ui.fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,7 +20,6 @@ import com.bumptech.glide.Glide;
 import com.gxj.videoad.R;
 import com.gxj.videoad.base.BaseFragment;
 import com.gxj.videoad.bean.VideoInfo;
-import com.gxj.videoad.ui.activity.VideoViewPlayerActivity;
 import com.gxj.videoad.utils.VideoScanner;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -35,18 +33,24 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * local 本地视频播放
+ * @author Administrator-pc
  */
-public abstract class LocalFragment extends BaseFragment {
+public abstract class BaseLocalFragment extends BaseFragment {
     private RecyclerView.Adapter adapter;
     private SwipeRefreshLayout refreshView;
-
-    private List<VideoInfo> list = new ArrayList<>();//视频列表
+    /**视频列表
+     */
+    private List<VideoInfo> list = new ArrayList<>();
 
     @Override
     protected String getTitle() {
         return "本地视频播放";
     }
 
+    /**
+     * 点击视频回调播放
+     * @param url
+     */
     protected abstract void onVideoOnClick(String url);
 
     @Override
@@ -87,7 +91,7 @@ public abstract class LocalFragment extends BaseFragment {
                 }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
                         .subscribe(o -> {
                             if (o != null) {
-                                Log.e(LocalFragment.class.getSimpleName(), o.size() + "");
+                                Log.e(BaseLocalFragment.class.getSimpleName(), o.size() + "");
                                 list = o;
                                 adapter.notifyDataSetChanged();
                                 refreshView.setRefreshing(false);

@@ -15,6 +15,7 @@ import com.gxj.videoad.widget.VideoGroup;
 
 /**
  * VideoView 视频播放详情
+ * @author Administrator-pc
  */
 public class VideoViewPlayerActivity extends BaseFragmentActivity {
 

@@ -23,17 +23,23 @@ import com.gxj.videoad.ui.activity.VideoViewPlayerActivity;
 /**
  * 网络视频播放
  */
-public abstract class NetFragment extends BaseFragment {
-
+public abstract class BaseNetFragment extends BaseFragment {
+    /**
+     * 列表
+     */
     private String[] list = {"http://psrecycle.oss-cn-hangzhou.aliyuncs.com/recycle/idcard/20180910100624030/4.mp4",
             "http://jzvd.nathen.cn/f55530ba8a59403da0621cbf4faef15e/adae4f2e3ecf4ea780beb057e7bce84c-5287d2089db37e62345123a1be272f8b.mp4",
-            "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4"};//视频列表
+            "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4"};
 
     @Override
     protected String getTitle() {
         return "网络视频播放";
     }
 
+    /**
+     * 点击事件
+     * @param  url 视
+     */
     protected abstract void onVideoOnClick(String url);
 
     @Override

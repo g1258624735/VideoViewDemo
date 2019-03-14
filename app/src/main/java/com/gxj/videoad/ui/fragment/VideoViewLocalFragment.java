@@ -7,7 +7,7 @@ import com.gxj.videoad.ui.activity.VideoViewPlayerActivity;
 /**
  * VideoView local 本地视频播放
  */
-public class VideoViewLocalFragment extends LocalFragment {
+public class VideoViewLocalFragment extends BaseLocalFragment {
 
     @Override
     protected String getTitle() {
@@ -18,6 +18,7 @@ public class VideoViewLocalFragment extends LocalFragment {
         return new VideoViewLocalFragment();
     }
 
+    @Override
     protected void onVideoOnClick(String url) {
         Intent intent = new Intent(mContext, VideoViewPlayerActivity.class);
         intent.putExtra("url", url);

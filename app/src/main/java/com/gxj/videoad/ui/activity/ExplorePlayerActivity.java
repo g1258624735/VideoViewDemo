@@ -21,6 +21,7 @@ import java.util.List;
 
 /**
  * Explore 视频播放详情
+ * @author Administrator-pc
  */
 public class ExplorePlayerActivity extends BaseFragmentActivity {
 
@@ -54,9 +55,11 @@ public class ExplorePlayerActivity extends BaseFragmentActivity {
 
             @Override
             public void onVideoChangeState(int state) {
-                if (state == Player.STATE_ENDED) {//视频播放完成  需要判断是否需要更新视频播放地址
+                //视频播放完成  需要判断是否需要更新视频播放地址
+                if (state == Player.STATE_ENDED) {
                     startVideo();
-                } else if (state == Player.STATE_READY) {//视频播放开始
+                    //视频播放开始
+                } else if (state == Player.STATE_READY) {
                     imgVideo.setImgThumbVisible(View.GONE);
                 }
             }

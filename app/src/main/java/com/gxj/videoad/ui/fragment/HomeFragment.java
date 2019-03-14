@@ -32,10 +32,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void initView(View v) {
-        Button btnVideoLocal = v.findViewById(R.id.btn_video_local);//VideoView   播放本地视频
-        Button btnVideoNet = v.findViewById(R.id.btn_video_net);//VideoView   播放网络视频
-        Button btnExploreLocal = v.findViewById(R.id.btn_explore_local);// explore  播放本地视频
-        Button btnExploreNet = v.findViewById(R.id.btn_explore_net);//explore   播放网络视频
+        //VideoView   播放本地视频
+        Button btnVideoLocal = v.findViewById(R.id.btn_video_local);
+        //VideoView   播放网络视频
+        Button btnVideoNet = v.findViewById(R.id.btn_video_net);
+        // explore  播放本地视频
+        Button btnExploreLocal = v.findViewById(R.id.btn_explore_local);
+        //explore   播放网络视频
+        Button btnExploreNet = v.findViewById(R.id.btn_explore_net);
         btnVideoLocal.setOnClickListener(this);
         btnVideoNet.setOnClickListener(this);
         btnExploreLocal.setOnClickListener(this);
@@ -57,6 +61,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.btn_explore_net:
                 startFragment(ExploreNetFragment.getInstance());
                 break;
+                default:
+                    break;
         }
 
     }

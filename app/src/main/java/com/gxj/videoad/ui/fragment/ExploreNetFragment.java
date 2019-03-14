@@ -7,7 +7,7 @@ import com.gxj.videoad.ui.activity.VideoViewPlayerActivity;
 /**
  *  Explore 网络视频播放
  */
-public class ExploreNetFragment extends NetFragment {
+public class ExploreNetFragment extends BaseNetFragment {
 
     @Override
     protected String getTitle() {
@@ -18,6 +18,7 @@ public class ExploreNetFragment extends NetFragment {
         return new ExploreNetFragment();
     }
 
+    @Override
     protected void onVideoOnClick(String url) {
         Intent intent = new Intent(mContext, VideoViewPlayerActivity.class);
         intent.putExtra("url", url);

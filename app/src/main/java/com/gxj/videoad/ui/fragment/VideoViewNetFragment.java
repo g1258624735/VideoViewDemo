@@ -3,12 +3,12 @@ package com.gxj.videoad.ui.fragment;
 import android.content.Intent;
 
 import com.gxj.videoad.ui.activity.ExplorePlayerActivity;
-import com.gxj.videoad.ui.activity.VideoViewPlayerActivity;
 
 /**
  * VideoView 网络视频播放
+ * @author Administrator-pc
  */
-public class VideoViewNetFragment extends NetFragment {
+public class VideoViewNetFragment extends BaseNetFragment {
 
     @Override
     protected String getTitle() {
@@ -19,6 +19,7 @@ public class VideoViewNetFragment extends NetFragment {
         return new VideoViewNetFragment();
     }
 
+    @Override
     protected void onVideoOnClick(String url) {
         Intent intent = new Intent(mContext, ExplorePlayerActivity.class);
         intent.putExtra("url", url);
