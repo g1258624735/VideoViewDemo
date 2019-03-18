@@ -42,6 +42,8 @@ import java.util.List;
 
 /**
  * explayer 视频播放器
+ *
+ * @author Administrator-pc
  */
 public class XHGVideoPlayerView extends LinearLayout {
 
@@ -102,20 +104,12 @@ public class XHGVideoPlayerView extends LinearLayout {
      * 初始化player
      */
     public void initPlayer() {
-        //1. 创建一个默认的 TrackSelector
-        BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-        TrackSelection.Factory videoTackSelectionFactory =
-                new AdaptiveTrackSelection.Factory(bandwidthMeter);
-        TrackSelector trackSelector =
-                new DefaultTrackSelector(videoTackSelectionFactory);
-        LoadControl loadControl = new DefaultLoadControl();
         //2.创建ExoPlayer
-        exoPlayer = ExoPlayerFactory.newSimpleInstance(mContext, trackSelector, loadControl);
+        exoPlayer = ExoPlayerFactory.newSimpleInstance(mContext);
         //3.为SimpleExoPlayer设置播放器
         exoPlayerView.setPlayer(exoPlayer);
         exoPlayerView.setUseController(false);
         exoPlayerView.setControllerAutoShow(true);
-
     }
 
     /**
@@ -204,6 +198,8 @@ public class XHGVideoPlayerView extends LinearLayout {
                     break;
                 case Player.STATE_IDLE:
                     Log.i(TAG, "ExoPlayer idle!");
+                    break;
+                default:
                     break;
             }
         }
@@ -299,7 +295,6 @@ public class XHGVideoPlayerView extends LinearLayout {
      * <br> Description: 获取SDCard的目录路径功能
      * <br> Author:      fangbingran
      * <br> Date:        2018/4/8 21:47
-     *
      */
     private String getSDCardPath() {
         File sdcardDir = null;
